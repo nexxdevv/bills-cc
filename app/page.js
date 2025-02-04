@@ -18,7 +18,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold px-4 my-6">Featured Products</h1>
+      <h1 className="text-2xl font-bold px-4 py-6 text-green-700">Featured Products</h1>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-2 p-4">
         {products.map((product, index) => (
           <div key={index} className="  py-4  transition duration-200">

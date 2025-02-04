@@ -15,16 +15,16 @@ const Header = () => {
   const bagCount = bag.length
 
   return (
-    <header className="flex items-center justify-between p-4">
+    <header className="flex items-center justify-between p-4 bg-orange-400">
       <Link href="/">
-        <h1 className={`${myFont.className} text-3xl`}>Bill's Citrus Clean</h1>
+        <h1 className={`${myFont.className} text-3xl text-white`}>Bill's Citrus Clean</h1>
       </Link>
       <div className="flex items-center gap-6">
         <Link href={user ? "/dashboard" : "/portal"}>
-          <User className="h-6 w-6" />
+          <User className="h-6 w-6 text-white" />
         </Link>
         <Link href="/bag" className="relative">
-          <ShoppingBag className="h-6 w-6" />
+          <ShoppingBag className="h-6 w-6 text-white" />
           {bagCount > 0 && (
             <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs px-2 py-1 rounded-full">
               {bagCount}

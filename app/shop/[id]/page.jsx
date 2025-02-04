@@ -53,7 +53,6 @@ const ProductDetailPage = () => {
 
   return (
     <div className="p-6">
-      <h1 className="text-3xl font-bold">{product.name}</h1>
       <Image
         src={product.photo}
         alt={product.name}
@@ -61,8 +60,9 @@ const ProductDetailPage = () => {
         height={500}
         className="object-cover rounded-lg"
       />
-      <p className="text-gray-600">Weight: {product.weight}kg</p>
-      <p className="text-xl font-bold">${product.price}</p>
+      <h1 className="font-bold">{product.name}</h1>
+      <p className="text-gray-600">{product.weight}</p>
+      <p className="font-bold">${product.price}</p>
       <p className="mt-4">{product.description}</p>
 
       <div className="mt-6 flex gap-4">
