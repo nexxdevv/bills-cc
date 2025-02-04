@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useEffect } from "react"
 import { type User, onAuthStateChanged, updateProfile } from "firebase/auth"
 import { doc, setDoc, getDoc } from "firebase/firestore"
@@ -8,6 +10,9 @@ interface UserData {
   displayName: string | null
   photoURL: string | null
   address: string | null
+  city: string | null
+  state: string | null
+  zipCode: string | null
 }
 
 export function useAuth() {
@@ -27,7 +32,10 @@ export function useAuth() {
             email: user.email,
             displayName: user.displayName,
             photoURL: user.photoURL,
-            address: null
+            address: null,
+            city: null,
+            state: null,
+            zipCode: null
           }
           await setDoc(userDocRef, defaultUserData)
           setUserData(defaultUserData)
@@ -62,5 +70,5 @@ export function useAuth() {
     }
   }
 
-  return { user, updateUserData, updatePhotoURL }
+  return { user, userData, updateUserData, updatePhotoURL }
 }
